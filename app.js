@@ -1,3 +1,4 @@
+
 //this function generate a reandom intiger  
 function randomIndex(min,max){
     min = Math.ceil(min);
@@ -35,28 +36,36 @@ function generateRandomSeatNum(){
         num.toString()
         setNum = num + randomLet
     } 
+    console.log(setNum)
     return setNum
 }
 
 
 
-
-//this function change time zone 
-function changeTimezone(zone) {
+// this function updates the timezone to the page 
+let timeDisplay = $('#time')
+let zone = "local" 
+function updateTimeZone(){
     // "America/New_York"
     // "America/Chicago"
     // "local"
+ 
     let date = new Date();
     if(zone == "local"){
-        return date.toLocaleString("en-US")
+        timeString =  date.toLocaleString("en-US", {hour12: false})
     } else {
-        return date.toLocaleString("en-US", {timeZone: zone});
+        timeString =  date.toLocaleString("en-US", {timeZone: zone, hour12: false});
     }
+    let time = timeString.split(" ");
+    // console.log(time)
+    timeDisplay.text(time[1])
+    setTimeout(updateTimeZone, 1000);
 }
-// this function updates the timezone to the page 
-function updateTimeZone(){
-
-}
+//this is to test the time zone change when triggered with zone variable
+testTimeChange
+$('#testTimeChange').on('click',()=>{
+    zone = "America/New_York"
+})
 
 
 
@@ -86,6 +95,7 @@ $('#exit').on('click',()=>{
 
 //call to generate a random seat number when page loads
 $(window).on('load', ()=>{
+    updateTimeZone();
     console.log('ready')
     $('#seatNum').text(generateRandomSeatNum())
 })
