@@ -1,5 +1,3 @@
-// console.log(jQuery)
-
 //this function generate a reandom intiger  
 function randomIndex(min,max){
     min = Math.ceil(min);
@@ -13,7 +11,7 @@ function randomInt(min, max) {
     return (num === 4 || (num > 10 && num < 17) ) ? randomInt(min, max) : num;
 }
 
-
+// this function geenerate a random seat number
 function generateRandomSeatNum(){
     let num = randomInt(1,28);
     let letterArr = ["A", "F", "B", "E", "C", "D"];
@@ -40,10 +38,25 @@ function generateRandomSeatNum(){
     return setNum
 }
 
-console.log(generateRandomSeatNum())
 
 
 
+//this function change time zone 
+function changeTimezone(zone) {
+    // "America/New_York"
+    // "America/Chicago"
+    // "local"
+    let date = new Date();
+    if(zone == "local"){
+        return date.toLocaleString("en-US")
+    } else {
+        return date.toLocaleString("en-US", {timeZone: zone});
+    }
+}
+// this function updates the timezone to the page 
+function updateTimeZone(){
+
+}
 
 
 
@@ -71,9 +84,10 @@ $('#exit').on('click',()=>{
     } 
 })
 
-
+//call to generate a random seat number when page loads
 $(window).on('load', ()=>{
     console.log('ready')
     $('#seatNum').text(generateRandomSeatNum())
 })
+
 
