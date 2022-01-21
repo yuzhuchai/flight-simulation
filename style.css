@@ -6,3 +6,11 @@
 #inflightEntertainment{
     display: none;
 }
+
+span{
+    text-decoration: underline;   
+}
+
+#p04{
+    display: none;
+}

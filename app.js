@@ -42,30 +42,9 @@ function generateRandomSeatNum(){
 
 
 
-// this function updates the timezone to the page 
-let timeDisplay = $('#time')
-let zone = "local" 
-function updateTimeZone(){
-    // "America/New_York"
-    // "America/Chicago"
-    // "local"
- 
-    let date = new Date();
-    if(zone == "local"){
-        timeString =  date.toLocaleString("en-US", {hour12: false})
-    } else {
-        timeString =  date.toLocaleString("en-US", {timeZone: zone, hour12: false});
-    }
-    let time = timeString.split(" ");
-    // console.log(time)
-    timeDisplay.text(time[1])
-    setTimeout(updateTimeZone, 1000);
-}
-//this is to test the time zone change when triggered with zone variable
-testTimeChange
-$('#testTimeChange').on('click',()=>{
-    zone = "America/New_York"
-})
+
+
+
 
 
 
@@ -92,7 +71,6 @@ $('#exit').on('click',()=>{
         }
     } 
 })
-
 //call to generate a random seat number when page loads
 $(window).on('load', ()=>{
     updateTimeZone();
