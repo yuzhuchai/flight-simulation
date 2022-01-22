@@ -9,6 +9,7 @@ let delayAnHour = 0
 let typeWriterActive = false 
 let loseHour = 0
 let gainHour = 0
+let col = 255
 
 
 function updateTimeZone(){
@@ -220,12 +221,18 @@ $(".delay").on('click',()=>{
 //when loseHour function clicks ----- can have multiple delays and can be clicked multiple times 
 $("#text").on('click',".loseHour",()=>{
     loseHour ++
+    col -=10
+    let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
+    $("body").css('background-color',color)
     // console.log("clicked", enableDelay)
 })
 
 //when gainHour function clicks ----- can have multiple delays and can be clicked multiple times 
 $("#text").on('click','.gainHour',()=>{
     gainHour ++
+    col +=10
+    let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
+    $("body").css('background-color',color)
     // console.log("clicked", enableDelay)
 })
 
