@@ -46,8 +46,8 @@ let p05display = false
 let p06 = $('#p06').html()
 let p06display = false
 
-
-console.log()
+let p07 = $('#p07').html()
+let p07display = false
 
 //P01 "delayed" 
 $('#text').on('click','#delay01',()=>{
@@ -126,15 +126,76 @@ $('#text').on('click', '.read04',()=>{
     $("#delay01").addClass('clickedLink')
 })
 
-
+let typeWriterActive = false 
 //p05 "journal"
 $('#text').on('click', '.journal05',()=>{
     if(!p06display){
         $('#text').append("<div id='p06show'>" + p06 + "</div>")
+        // $('#text').append("<div id='p07show'>" + p07 + "</div>")
+        $('#text').append("<div id='p07show'><span id='typedText'></span><span id='cursor'> |</span></div>")
+
         p06display = true
+        p07display = true
     } 
     $('.journal05').addClass('clickedLink')
+    typeWriterActive = true
 })
+
+
+
+// this is the typewriter effecta ---------------------
+let i = 0
+$(document).on('keypress',(e)=>{
+    if(typeWriterActive){
+        let str = "they are spraying green goo on the wings of the plane, before they started spraying green goo on the wings of the plane. I’ve seen it before, in Chicago." 
+        let strArr = str.split('')
+        // let c = str[i] 
+        let typedText = str.substring(0,i)
+        // console.log(c)
+        i++
+        $('#typedText').text(typedText)
+    }
+})
+
+function typeWriter(){
+    $('#p07show').css('display', 'none');
+    setTimeout(function(){
+      $('#p07show').css('display', 'flex');
+  
+      let str = $('#p07show').html(),
+      i = 0,
+      isTag,
+      text,
+      cursor = "|",
+      timer;
+  
+    //   (function type() {
+    //     text = str.slice(0, ++i);
+    //     if (text === str){ 
+    //         i = 0;
+    //       blink();
+    //       return;
+    //     }
+    //     $('#p07show').html(text + " " + cursor);
+    //     timer = setTimeout(type, 40);
+    //   }());
+      
+      function blink() {
+        i++;
+        const foo = str + " " + (i%2 ? cursor : '');
+        $('.p07show').html(foo);
+        if (i < 10) timer = setTimeout(blink, 600);
+        else fade();
+      }
+      
+      function fade() {
+          $('#p07show').html(str);
+      }
+      
+    }, 300);
+}
+
+
 
 
 

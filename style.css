@@ -1,7 +1,13 @@
 .h1-b{
     font-weight: 800;
+    color: black;
+    text-decoration: none;
 }
 
+#typedText {
+    color: black;
+    text-decoration: none;
+}
 
 #inflightEntertainment{
     display: none;
@@ -20,4 +26,19 @@ span{
 .clickedLink{
     color: #551A8B;
     text-decoration-color: #551A8B; 
+}
+
+#p07show {
+    overflow: hidden;
+}
+
+#cursor {
+    font-weight: bolder;
+    animation: blinker 1s linear infinite;
+}
+  
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
 }
