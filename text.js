@@ -7,6 +7,8 @@ let second
 let enableDelay = 0
 let delayAnHour = 0
 let typeWriterActive = false 
+let loseHour = 0
+let gainHour = 0
 
 
 function updateTimeZone(){
@@ -27,7 +29,7 @@ function updateTimeZone(){
     //delay time every 10 seconds when delay is clicked
     d = new Date(timeString)
     d.setSeconds(d.getSeconds() - 10*enableDelay)
-    d.setHours(d.getHours() - delayAnHour)
+    d.setHours(d.getHours() - delayAnHour - loseHour + gainHour)
     console.log(d)
     timeDisplay.text(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds())
     setTimeout(updateTimeZone, 1000);
@@ -48,7 +50,6 @@ let p04display = false
 
 let p05 = $('#p05').html()
 let p05display = false
-
 
 let p06 = $('#p06').html()
 let p06display = false
@@ -71,10 +72,11 @@ $('#text').on('click','#delay01',()=>{
         $("#text").append("<div id='p02show'>"+ p02 +"</div>")
     }
     p02display = true;
+    $('.read04').addClass('clickedLink')
 })
 
 //P01 "an hour" 
-$('#delayAnHour').on("click", ()=>{
+$('#text').on("click", "#delayAnHour", ()=>{
     delayAnHour = 1
     if(!p02display){
         $('#text').append("<div id='p02show'>" + p02 + "</div>")
@@ -82,11 +84,13 @@ $('#delayAnHour').on("click", ()=>{
     p02display = true;
     $("#delayAnHour").addClass('clickedLink');
     $("#delay01").addClass('clickedLink')
+    $('.read04').addClass('clickedLink')
 })
 
 
 //P01 "the city"
 $("#theCity01").on('click',()=>{
+    p04 = $('#p04').html()
     if(!p04display){  
         $('#text').append("<div id='p04show'>" + p04 + "</div>")
     }
@@ -103,6 +107,7 @@ $('#text').on('click', '.write02', ()=>{
     }
     p03display = true;
     $(".write02").addClass('clickedLink')
+    $('.read04').addClass('clickedLink')
 })
 
 //p03 next 
@@ -208,5 +213,21 @@ $('#text').on('click','.chiTime',()=>{
 //when delay function clicks ----- can have multiple delays and can be clicked multiple times 
 $(".delay").on('click',()=>{
     enableDelay ++
-    console.log("clicked", enableDelay)
+    // console.log("clicked", enableDelay)
 })
+
+
+//when loseHour function clicks ----- can have multiple delays and can be clicked multiple times 
+$("#text").on('click',".loseHour",()=>{
+    loseHour ++
+    // console.log("clicked", enableDelay)
+})
+
+//when gainHour function clicks ----- can have multiple delays and can be clicked multiple times 
+$("#text").on('click','.gainHour',()=>{
+    gainHour ++
+    // console.log("clicked", enableDelay)
+})
+
+
+// bug time change is a bit weird
