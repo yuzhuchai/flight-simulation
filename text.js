@@ -42,6 +42,11 @@ let p04display = false
 let p05 = $('#p05').html()
 let p05display = false
 
+
+let p06 = $('#p06').html()
+let p06display = false
+
+
 console.log()
 
 //P01 "delayed" 
@@ -52,9 +57,6 @@ $('#text').on('click','#delay01',()=>{
         $("#text").append("<div id='p02show'>"+ p02 +"</div>")
     }
     p02display = true;
-    // $('.read04').contents().unwrap();
-    // $("br",'#p04').remove();
-    // $("#p04").html(p04+"<span class='next04'>[next]</span>")
 })
 
 //P01 "an hour" 
@@ -64,8 +66,6 @@ $('#delayAnHour').on("click", ()=>{
         $('#text').append("<div id='p02show'>" + p02 + "</div>")
     }
     p02display = true;
-    // $("br",'#p04').remove();
-    // $("#p04").html(p04+"<span class='next04'>[next]</span>")
     $("#delayAnHour").addClass('clickedLink');
     $("#delay01").addClass('clickedLink')
 })
@@ -73,8 +73,7 @@ $('#delayAnHour').on("click", ()=>{
 
 //P01 "the city"
 $("#theCity01").on('click',()=>{
-    if(!p04display){
-        
+    if(!p04display){  
         $('#text').append("<div id='p04show'>" + p04 + "</div>")
     }
     p04display = true;
@@ -93,7 +92,7 @@ $('#text').on('click', '.write02', ()=>{
     $(".write02").addClass('clickedLink')
 })
 
-
+//p03 next 
 $('#text').on('click', '.next03',()=>{
     if(!p04display){
         $('.read04').contents().unwrap();
@@ -116,7 +115,7 @@ $('#text').on('click', '.next04',()=>{
 })
 
 
-
+//p04 "read"
 $('#text').on('click', '.read04',()=>{
     if(!p02display){
         $('#text').append("<div id='p02show'>" + p02 + "</div>")
@@ -126,6 +125,20 @@ $('#text').on('click', '.read04',()=>{
     $("#delayAnHour").addClass('clickedLink');
     $("#delay01").addClass('clickedLink')
 })
+
+
+//p05 "journal"
+$('#text').on('click', '.journal05',()=>{
+    if(!p06display){
+        $('#text').append("<div id='p06show'>" + p06 + "</div>")
+        p06display = true
+    } 
+    $('.journal05').addClass('clickedLink')
+})
+
+
+
+
 
 // change time zone functions -----------------------------------------
 //change time when "NY" is clicked 
