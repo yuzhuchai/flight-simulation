@@ -6,6 +6,8 @@ let minute
 let second
 let enableDelay = 0
 let delayAnHour = 0
+let typeWriterActive = false 
+
 
 function updateTimeZone(){
     // "America/New_York"
@@ -16,12 +18,17 @@ function updateTimeZone(){
         timeString =  date.toLocaleString("en-US", {hour12: false})
     } else {
         timeString =  date.toLocaleString("en-US", {timeZone: zone, hour12: false});
+        // fix bug, when hour is 24 need to convert to 00
+        let changeTime = timeString.split(' ')[1].split(':')
+        if(changeTime[0] == "24"){
+            timeString = timeString.split(' ')[0] + " 00:" + changeTime[1] +":"+ changeTime[2]
+        }
     }
     //delay time every 10 seconds when delay is clicked
     d = new Date(timeString)
     d.setSeconds(d.getSeconds() - 10*enableDelay)
     d.setHours(d.getHours() - delayAnHour)
-    // console.log(d)
+    console.log(d)
     timeDisplay.text(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds())
     setTimeout(updateTimeZone, 1000);
 }
@@ -48,6 +55,13 @@ let p06display = false
 
 let p07 = $('#p07').html()
 let p07display = false
+
+let p08 = $('#p08').html()
+let p08display = false
+
+let p09 = $('#p09').html()
+let p09display = false
+
 
 //P01 "delayed" 
 $('#text').on('click','#delay01',()=>{
@@ -85,7 +99,6 @@ $("#theCity01").on('click',()=>{
 $('#text').on('click', '.write02', ()=>{
     console.log(p03display)
     if(!p03display){
-        console.log('p03not shown')
         $('#text').append("<div id='p03show'>" + p03 + "</div>")
     }
     p03display = true;
@@ -126,7 +139,7 @@ $('#text').on('click', '.read04',()=>{
     $("#delay01").addClass('clickedLink')
 })
 
-let typeWriterActive = false 
+
 //p05 "journal"
 $('#text').on('click', '.journal05',()=>{
     if(!p06display){
@@ -141,6 +154,22 @@ $('#text').on('click', '.journal05',()=>{
     typeWriterActive = true
 })
 
+
+//p07 "seenIt07"
+$('#text').on('click', '.seenIt07', ()=>{
+    if(!p08display){
+        $('#text').append("<div id='p08show'>" + p08 + "</div>")
+    }
+    $('.seenIt07').addClass('clickedLink')
+})
+
+//p07 "chicago"
+$('#text').on('click', '.chicago07', ()=>{
+    if(!p09display){
+        $('#text').append("<div id='p08show'>" + p09 + "</div>")
+    }
+    $('.chicago07').addClass('clickedLink')
+})
 
 
 // this is the typewriter effecta ---------------------
@@ -170,6 +199,11 @@ $(".nyTime").on('click',()=>{
     zone = "America/New_York"
 })
 
+
+//change time when "CHI" is clicked
+$('#text').on('click','.chiTime',()=>{
+    zone = "America/Chicago"
+})
 
 //when delay function clicks ----- can have multiple delays and can be clicked multiple times 
 $(".delay").on('click',()=>{
