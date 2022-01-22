@@ -9,8 +9,15 @@
 
 span{
     text-decoration: underline;   
+    color: #0000EE;
+    text-decoration-color: #0000EE;
 }
 
 .hiddenText{
     display: none;
+}
+
+.clickedLink{
+    color: #551A8B;
+    text-decoration-color: #551A8B; 
 }

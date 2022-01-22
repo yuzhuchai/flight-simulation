@@ -53,6 +53,14 @@ $(".delay").on('click',()=>{
     p02display = true;
 })
 
+$('#delay01').on('click',()=>{
+    $("#delay01").addClass('clickedLink')
+    $('#delayAnHour').addClass('clickedLink')
+})
+
+$('#theCity01').on('click',()=>{
+    $('#theCity01').addClass('clickedLink')
+})
 
 $('#delayAnHour').on("click", ()=>{
     delayAnHour = 1
@@ -60,13 +68,15 @@ $('#delayAnHour').on("click", ()=>{
         $('#text').append("<div id='p02show'>" + p02 + "</div>")
     }
     p02display = true;
+    $("#delayAnHour").addClass('clickedLink');
+    $("#delay01").addClass('clickedLink')
 })
 
 
 $(".nyTime").on('click',()=>{
     zone = "America/New_York"
 })
-$("#display04").on('click',()=>{
+$("#theCity01").on('click',()=>{
     if(!p04display){
         $('#text').append("<div id='p04show'>" + p04 + "</div>")
     }
