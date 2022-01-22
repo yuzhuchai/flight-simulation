@@ -149,52 +149,15 @@ $(document).on('keypress',(e)=>{
     if(typeWriterActive){
         let str = "they are spraying green goo on the wings of the plane, before they started spraying green goo on the wings of the plane. I’ve seen it before, in Chicago." 
         let strArr = str.split('')
-        // let c = str[i] 
         let typedText = str.substring(0,i)
-        // console.log(c)
         i++
         $('#typedText').text(typedText)
+        if(i > str.length){
+            $('#p07show').html(p07)
+            typeWriterActive = false;
+        }
     }
 })
-
-function typeWriter(){
-    $('#p07show').css('display', 'none');
-    setTimeout(function(){
-      $('#p07show').css('display', 'flex');
-  
-      let str = $('#p07show').html(),
-      i = 0,
-      isTag,
-      text,
-      cursor = "|",
-      timer;
-  
-    //   (function type() {
-    //     text = str.slice(0, ++i);
-    //     if (text === str){ 
-    //         i = 0;
-    //       blink();
-    //       return;
-    //     }
-    //     $('#p07show').html(text + " " + cursor);
-    //     timer = setTimeout(type, 40);
-    //   }());
-      
-      function blink() {
-        i++;
-        const foo = str + " " + (i%2 ? cursor : '');
-        $('.p07show').html(foo);
-        if (i < 10) timer = setTimeout(blink, 600);
-        else fade();
-      }
-      
-      function fade() {
-          $('#p07show').html(str);
-      }
-      
-    }, 300);
-}
-
 
 
 
