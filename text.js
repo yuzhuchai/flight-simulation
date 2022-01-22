@@ -33,6 +33,8 @@ function updateTimeZone(){
 // })
 
 
+// display texts functions --------------------------------------------------
+
 let p02 = $('#p02').html()
 let p02display = false 
 
@@ -43,25 +45,17 @@ let p04 = $('#p04').html()
 let p04display = false
 
 
-//when delay function clicks 
-$(".delay").on('click',()=>{
-    enableDelay ++
-    console.log("clicked", enableDelay)
+//P01 "delayed" 
+$('#delay01').on('click',()=>{
+    $("#delay01").addClass('clickedLink')
+    $('#delayAnHour').addClass('clickedLink')
     if(!p02display){
         $("#text").append("<div id='p02show'>"+ p02 +"</div>")
     }
     p02display = true;
 })
 
-$('#delay01').on('click',()=>{
-    $("#delay01").addClass('clickedLink')
-    $('#delayAnHour').addClass('clickedLink')
-})
-
-$('#theCity01').on('click',()=>{
-    $('#theCity01').addClass('clickedLink')
-})
-
+//P02 "an hour" 
 $('#delayAnHour').on("click", ()=>{
     delayAnHour = 1
     if(!p02display){
@@ -73,12 +67,26 @@ $('#delayAnHour').on("click", ()=>{
 })
 
 
-$(".nyTime").on('click',()=>{
-    zone = "America/New_York"
-})
+//P04 "the city"
 $("#theCity01").on('click',()=>{
     if(!p04display){
         $('#text').append("<div id='p04show'>" + p04 + "</div>")
     }
     p04display = true;
+    $('#theCity01').addClass('clickedLink')
+})
+
+
+
+// change time zone functions -----------------------------------------
+//change time when NY is clicked 
+$(".nyTime").on('click',()=>{
+    zone = "America/New_York"
+})
+
+
+//when delay function clicks ----- can have multiple delays and can be clicked multiple times 
+$(".delay").on('click',()=>{
+    enableDelay ++
+    console.log("clicked", enableDelay)
 })
