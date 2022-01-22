@@ -163,6 +163,7 @@ $('#text').on('click', '.journal05',()=>{
 
 //p07 "seenIt07"
 $('#text').on('click', '.seenIt07', ()=>{
+    p08 = $('#p08').html()
     if(!p08display){
         $('#text').append("<div id='p08show'>" + p08 + "</div>")
     }
@@ -172,9 +173,23 @@ $('#text').on('click', '.seenIt07', ()=>{
 //p07 "chicago"
 $('#text').on('click', '.chicago07', ()=>{
     if(!p09display){
-        $('#text').append("<div id='p08show'>" + p09 + "</div>")
+        $('#text').append("<div id='p09show'>" + p09 + "</div>")
     }
     $('.chicago07').addClass('clickedLink')
+    $('.loseHour08').addClass('clickedLink')
+    p09display = true
+})
+
+
+//P08 "lose An Hour"
+$('#text').on('click', '.loseHour08', ()=>{
+    console.log('clicked')
+    if(!p09display){
+        $('#text').append("<div id='p09show'>" + p09 + "</div>")
+    } 
+    $('.loseHour08').addClass('clickedLink')
+    $('.chicago07').addClass('clickedLink')
+    p09display = true
 })
 
 
