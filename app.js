@@ -73,7 +73,7 @@ $('#map').on('click',()=>{
             $('#inflightEntertainment').hide();
         }
     } 
-    formatTimeMap();
+    updateTimeMap();
 })
 
 //exit to the homepage

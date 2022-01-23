@@ -118,7 +118,7 @@ $("#theCity01").on('click',()=>{
  
 //P02 "write", need to bound the onclick function to the parent div, JQuery OnClick Method is bound to an element or selector on page ready/load. 
 $('#textContainer').on('click', '.write02', ()=>{
-    console.log(p03display)
+    // console.log(p03display)
     if(!p03display){
         $('#text').append("<div id='p03show' class='textDiv'>" + p03 + "</div>")
     }
@@ -211,7 +211,7 @@ $('#textContainer').on('click', '.gainHour08', ()=>{
 
 //P08 "lose An Hour"
 $('#textContainer').on('click', '.loseHour08', ()=>{
-    console.log('clicked')
+    // console.log('clicked')
     if(!p09display){
         $('#text').append("<div id='p09show' class='textDiv'>" + p09 + "</div>")
     } 
@@ -256,7 +256,7 @@ $("#textContainer").on('click','.intercom09',()=>{
     if(!buttonEnable){
         $('#text').hide();
         let content =  $('#text').text()
-        console.log(content)
+        // console.log(content)
         let word = content.split(" ");
         let newButtonArr = word.filter(word =>{
             return word !== "" 
@@ -268,12 +268,12 @@ $("#textContainer").on('click','.intercom09',()=>{
             }  
         })
         let newHTML = newButtonArr.join("")
-        console.log(newHTML)
+        // console.log(newHTML)
         $('#buttonDiv').show();
         $("#buttonDiv").replaceWith( "<div id=buttonDiv>"+newHTML+"</div>" )
         buttonEnable = true;
     } else {
-        console.log(buttonEnable,"this is triggered")
+        // console.log(buttonEnable,"this is triggered")
         $('#buttonDiv').hide()
         $('#text').show();
         buttonEnable = false 
