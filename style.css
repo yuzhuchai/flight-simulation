@@ -17,6 +17,10 @@ body {
     display: none;
 }
 
+#timeLineMap{
+    display:none;
+}
+
 span{
     text-decoration: underline;   
     color: #0000EE;
@@ -45,4 +49,9 @@ span{
     50% {
       opacity: 0;
     }
+}
+
+.intercomButton:hover{
+    background-color: #0000EE;
+    color: white;
 }

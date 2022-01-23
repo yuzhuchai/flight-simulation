@@ -1,4 +1,5 @@
 
+
 //this function generate a reandom intiger  
 function randomIndex(min,max){
     min = Math.ceil(min);
@@ -58,24 +59,49 @@ $('#touch').on('click',()=>{
         document.documentElement.requestFullscreen();
         $('#welcomePage').hide();
         $('#inflightEntertainment').show();
+        $('#timeLineMap').hide();
     } 
 })
 // toggle fullscreen when choing the in flight map, need more fucntion to display the inflight map
-$('#exit').on('click',()=>{
+$('#map').on('click',()=>{
     console.log('clicked')
     if (document.fullscreenElement) {
         if (document.exitFullscreen) {
             document.exitFullscreen();
-            $('#welcomePage').show();
+            $('#timeLineMap').show();
+            $('#welcomePage').hide();
             $('#inflightEntertainment').hide();
         }
     } 
+    formatTimeMap();
 })
+
+//exit to the homepage
+$('#exit').on('click',  ()=>{
+    $('#welcomePage').show();
+    $('#timeLineMap').hide();
+    $('#inflightEntertainment').hide();
+})
+
+//toggle entertainment page
+$('#entertainment').on('click', ()=>{
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        $('#welcomePage').hide();
+        $('#inflightEntertainment').show();
+        $('#timeLineMap').hide();
+    }   
+})
+
 //call to generate a random seat number when page loads
 $(window).on('load', ()=>{
     updateTimeZone();
     console.log('ready')
     $('#seatNum').text(generateRandomSeatNum())
+    timeArray.push(new Date().toLocaleString("en-US", {hour12: false}).split(' ')[1])
 })
+
+
+
 
 

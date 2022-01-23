@@ -1,5 +1,6 @@
 // this function updates the timezone to the page 
 let timeDisplay = $('#time')
+let displayedTime
 let zone = "local" 
 let hour
 let minute 
@@ -11,6 +12,7 @@ let loseHour = 0
 let gainHour = 0
 let col = 255
 let buttonEnable = false 
+let timeArray = []
 
 
 function updateTimeZone(){
@@ -18,8 +20,13 @@ function updateTimeZone(){
     // "America/Chicago"
     // "local"
     let date = new Date();
+    let timeString
     if(zone == "local"){
         timeString =  date.toLocaleString("en-US", {hour12: false})
+        let changeTime = timeString.split(' ')[1].split(':')
+        if(changeTime[0] == "24"){
+            timeString = timeString.split(' ')[0] + " 00:" + changeTime[1] +":"+ changeTime[2]
+        }
     } else {
         timeString =  date.toLocaleString("en-US", {timeZone: zone, hour12: false});
         // fix bug, when hour is 24 need to convert to 00
@@ -32,8 +39,9 @@ function updateTimeZone(){
     d = new Date(timeString)
     d.setSeconds(d.getSeconds() - 10*enableDelay)
     d.setHours(d.getHours() - delayAnHour - loseHour + gainHour)
-    console.log(d)
-    timeDisplay.text(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds())
+    // console.log(d)
+    displayedTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+    timeDisplay.text(displayedTime)
     setTimeout(updateTimeZone, 1000);
 }
 
@@ -93,6 +101,7 @@ $('#textContainer').on("click", "#delayAnHour", ()=>{
     $("#delayAnHour").addClass('clickedLink');
     $("#delay01").addClass('clickedLink')
     $('.read04').addClass('clickedLink')
+    timeArray.push(displayedTime)
 })
 
 
@@ -134,6 +143,7 @@ $('#textContainer').on('click', '.next03',()=>{
     $('.next03').remove()
 })
 
+//p04 next 
 $('#textContainer').on('click', '.next04',()=>{ 
     $('#text').append("<div id='p05show' class='textDiv'>" + p05 + "</div>")
     p05display = true; 
@@ -254,7 +264,7 @@ $("#textContainer").on('click','.intercom09',()=>{
             if(word != "intercom"){
                 return "<button>"+ word +"</button>"
             } else {
-                return "<button class='intercom09'>" + word + "</button>"
+                return "<button class='intercom09 intercomButton'>" + word + "</button>"
             }  
         })
         let newHTML = newButtonArr.join("")
@@ -275,18 +285,21 @@ $("#textContainer").on('click','.intercom09',()=>{
 //change time when "NY" is clicked 
 $(".nyTime").on('click',()=>{
     zone = "America/New_York"
+    timeArray.push(displayedTime)
 })
 
 
 //change time when "CHI" is clicked
 $('#textContainer').on('click','.chiTime',()=>{
     zone = "America/Chicago"
+    timeArray.push(displayedTime)
 })
 
 //when delay function clicks ----- can have multiple delays and can be clicked multiple times 
 $(".delay").on('click',()=>{
     enableDelay ++
     // console.log("clicked", enableDelay)
+    timeArray.push(displayedTime)
 })
 
 
@@ -297,6 +310,7 @@ $("#textContainer").on('click',".loseHour",()=>{
     let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
     $("body").css('background-color',color)
     // console.log("clicked", enableDelay)
+    timeArray.push(displayedTime)
 })
 
 //when gainHour function clicks ----- can have multiple delays and can be clicked multiple times 
@@ -306,6 +320,7 @@ $("#textContainer").on('click','.gainHour',()=>{
     let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
     $("body").css('background-color',color)
     // console.log("clicked", enableDelay)
+    timeArray.push(displayedTime)
 })
 
 
