@@ -73,7 +73,7 @@ let p25 = $('#p25').html()
 let p25display = false
 
 //P01 "delayed" 
-$('#text').on('click','#delay01',()=>{
+$('#textContainer').on('click','#delay01',()=>{
     $("#delay01").addClass('clickedLink')
     $('#delayAnHour').addClass('clickedLink')
     if(!p02display){
@@ -84,7 +84,7 @@ $('#text').on('click','#delay01',()=>{
 })
 
 //P01 "an hour" 
-$('#text').on("click", "#delayAnHour", ()=>{
+$('#textContainer').on("click", "#delayAnHour", ()=>{
     delayAnHour = 1
     if(!p02display){
         $('#text').append("<div id='p02show' class='textDiv'>" + p02 + "</div>")
@@ -108,7 +108,7 @@ $("#theCity01").on('click',()=>{
 
  
 //P02 "write", need to bound the onclick function to the parent div, JQuery OnClick Method is bound to an element or selector on page ready/load. 
-$('#text').on('click', '.write02', ()=>{
+$('#textContainer').on('click', '.write02', ()=>{
     console.log(p03display)
     if(!p03display){
         $('#text').append("<div id='p03show' class='textDiv'>" + p03 + "</div>")
@@ -119,7 +119,7 @@ $('#text').on('click', '.write02', ()=>{
 })
 
 //p03 next 
-$('#text').on('click', '.next03',()=>{
+$('#textContainer').on('click', '.next03',()=>{
     if(!p04display){
         $('.read04').contents().unwrap();
         $("br",'#p04').remove();
@@ -134,7 +134,7 @@ $('#text').on('click', '.next03',()=>{
     $('.next03').remove()
 })
 
-$('#text').on('click', '.next04',()=>{ 
+$('#textContainer').on('click', '.next04',()=>{ 
     $('#text').append("<div id='p05show' class='textDiv'>" + p05 + "</div>")
     p05display = true; 
     $('.next04').remove()
@@ -142,7 +142,7 @@ $('#text').on('click', '.next04',()=>{
 
 
 //p04 "read"
-$('#text').on('click', '.read04',()=>{
+$('#textContainer').on('click', '.read04',()=>{
     if(!p02display){
         $('#text').append("<div id='p02show' class='textDiv'>" + p02 + "</div>")
         p02display = true
@@ -154,7 +154,7 @@ $('#text').on('click', '.read04',()=>{
 
 
 //p05 "journal"
-$('#text').on('click', '.journal05',()=>{
+$('#textContainer').on('click', '.journal05',()=>{
     if(!p06display){
         $('#text').append("<div id='p06show' class='textDiv'>" + p06 + "</div>")
         // $('#text').append("<div id='p07show'>" + p07 + "</div>")
@@ -178,7 +178,7 @@ $('#text').on('click', '.seenIt07', ()=>{
 })
 
 //p07 "chicago"
-$('#text').on('click', '.chicago07', ()=>{
+$('#textContainer').on('click', '.chicago07', ()=>{
     if(!p09display){
         $('#text').append("<div id='p09show' class='textDiv'>" + p09 + "</div>")
     }
@@ -190,7 +190,7 @@ $('#text').on('click', '.chicago07', ()=>{
 
 
 //P08 "gain An Hour"
-$('#text').on('click', '.gainHour08', ()=>{
+$('#textContainer').on('click', '.gainHour08', ()=>{
     if(!p25display){
         $('#text').append("<div id='p25show' class='textDiv'>" + p25 + "</div>")
     }
@@ -200,7 +200,7 @@ $('#text').on('click', '.gainHour08', ()=>{
 
 
 //P08 "lose An Hour"
-$('#text').on('click', '.loseHour08', ()=>{
+$('#textContainer').on('click', '.loseHour08', ()=>{
     console.log('clicked')
     if(!p09display){
         $('#text').append("<div id='p09show' class='textDiv'>" + p09 + "</div>")
@@ -212,7 +212,7 @@ $('#text').on('click', '.loseHour08', ()=>{
 
 
 //p09 "waiting"
-$('#text').on('click', '.waiting09', ()=>{
+$('#textContainer').on('click', '.waiting09', ()=>{
     // console.log('clicked')
     if(!p10display){
         $('#text').append("<div id='p10show' class='textDiv'>" + p10 + "</div>")
@@ -242,10 +242,11 @@ $(document).on('keypress',(e)=>{
 
 
 //intercom change text to button 
-$("#text").on('click','.intercom09',()=>{
+$("#textContainer").on('click','.intercom09',()=>{
     if(!buttonEnable){
-        $('.textDiv').hide();
-        content =  $('#text').text()
+        $('#text').hide();
+        let content =  $('#text').text()
+        console.log(content)
         let word = content.split(" ");
         let newButtonArr = word.filter(word =>{
             return word !== "" 
@@ -258,12 +259,13 @@ $("#text").on('click','.intercom09',()=>{
         })
         let newHTML = newButtonArr.join("")
         console.log(newHTML)
-        $("#text").append("<div id='buttonDiv'>"+ newHTML + "</div>")
+        $('#buttonDiv').show();
+        $("#buttonDiv").replaceWith( "<div id=buttonDiv>"+newHTML+"</div>" )
         buttonEnable = true;
     } else {
         console.log(buttonEnable,"this is triggered")
         $('#buttonDiv').hide()
-        $('.textDiv').show();
+        $('#text').show();
         buttonEnable = false 
     }
 })
@@ -277,7 +279,7 @@ $(".nyTime").on('click',()=>{
 
 
 //change time when "CHI" is clicked
-$('#text').on('click','.chiTime',()=>{
+$('#textContainer').on('click','.chiTime',()=>{
     zone = "America/Chicago"
 })
 
@@ -289,7 +291,7 @@ $(".delay").on('click',()=>{
 
 
 //when loseHour function clicks ----- can have multiple delays and can be clicked multiple times 
-$("#text").on('click',".loseHour",()=>{
+$("#textContainer").on('click',".loseHour",()=>{
     loseHour ++
     col -=10
     let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
@@ -298,7 +300,7 @@ $("#text").on('click',".loseHour",()=>{
 })
 
 //when gainHour function clicks ----- can have multiple delays and can be clicked multiple times 
-$("#text").on('click','.gainHour',()=>{
+$("#textContainer").on('click','.gainHour',()=>{
     gainHour ++
     col +=10
     let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
