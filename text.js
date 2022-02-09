@@ -103,6 +103,13 @@ let p16display = false
 let p17 = $('#p17').html()
 let p17display = false
 
+
+let p18 = $('#p18').html()
+let p18display = false
+
+let p19 = $('#p19').html()
+let p19display = false
+
 let p25 = $('#p25').html()
 let p25display = false
 
@@ -328,6 +335,36 @@ $('#textContainer').on('click', '.delay16', ()=>{
     $('.delay16').addClass('clickedLink')
 })
 
+//p16 "travel 2 miles"
+$('#textContainer').on('click', '.travel2miles16', ()=>{
+    if(!p18display){
+        $('#text').append("<div id='p18show' class='textDiv'>" + p18 + "</div>")
+    } 
+    $('.travel2miles16').addClass('clickedLink')
+    $('.heatoff17').addClass('clickedLink')
+    p18display = true
+})
+
+
+//p17 "heat shuts off"
+$('#textContainer').on('click', '.heatoff17', ()=>{
+    if(!p18display){
+        $('#text').append("<div id='p18show' class='textDiv'>" + p18 + "</div>")
+    } 
+    $('.heatoff17').addClass('clickedLink')
+    $('.travel2miles16').addClass('clickedLink')
+    p18display = true
+})
+
+
+//p18 "next"
+$('#textContainer').on('click', '.next18', ()=>{
+    if(!p19display){
+        $('#text').append("<div id='p19show' class='textDiv'>" + p19 + "</div>")
+    } 
+    $('.next18').remove()
+    p19display = true
+})
 
 
 // this is the typewriter effect ---------------------
