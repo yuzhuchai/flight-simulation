@@ -14,3 +14,5 @@ function updateTimeMap(){
 
 
 // https://stackoverflow.com/questions/22004831/how-to-open-browsers-javascript-console-programmatically
+
+//displaying the time map like the twine map but with time? 

@@ -1,3 +1,6 @@
+//progress - to the 10th
+
+
 // this function updates the timezone to the page 
 let timeDisplay = $('#time')
 let displayedTime
@@ -73,9 +76,29 @@ let p08display = false
 let p09 = $('#p09').html()
 let p09display = false
 
-
 let p10 = $('#p10').html()
 let p10display = false
+
+let p11 = $('#p11').html()
+let p11display = false
+
+let p12 = $('#p12').html()
+let p12display = false
+
+let p13 = $('#p13').html()
+let p13display = false
+
+let p14 = $('#p14').html()
+let p14display = false
+
+let p15 = $('#p15').html()
+let p15display = false
+
+let p16 = $('#p16').html()
+let p16display = false
+
+let p17 = $('#p17').html()
+let p17display = false
 
 let p25 = $('#p25').html()
 let p25display = false
@@ -232,8 +255,79 @@ $('#textContainer').on('click', '.waiting09', ()=>{
 })
 
 
+//p10 "waiting"
+$('#textContainer').on('click', '.redPlanet10', ()=>{
+    // console.log('clicked')
+    if(!p13display){
+        $('#text').append("<div id='p13show' class='textDiv'>" + p13 + "</div>")
+    } 
+    $('.redPlanet10').addClass('clickedLink')
+    p13display = true
+})
 
-// this is the typewriter effecta ---------------------
+//p10 "next"
+$('#textContainer').on('click', '.next10',()=>{ 
+    $('#text').append("<div id='p11show' class='textDiv'>" + p11 + "</div>")
+    p11display = true; 
+    $('.next10').remove()
+})
+
+//p11 "the captain"
+$('#textContainer').on('click', '.captain11', ()=>{
+    if(!p12display){
+        $('#text').append("<div id='p12show' class='textDiv'>" + p12 + "</div>")
+    } 
+    $('.captain11').addClass('clickedLink')
+    p12display = true
+})
+
+
+//p12 "authoritative"
+$('#textContainer').on('click', '.auth12', ()=>{
+    if(!p14display){
+        $('#text').append("<div id='p14show' class='textDiv'>" + p14 + "</div>")
+    } 
+    $('.auth12').addClass('clickedLink')
+    p14display = true
+})
+
+//p14 "giggling"
+$('#textContainer').on('click', '.giggle14', ()=>{
+    if(!p15display){
+        $('#text').append("<div id='p15show' class='textDiv'>" + p15 + "</div>")
+    } 
+    $('.giggle14').addClass('clickedLink')
+    p15display = true
+})
+
+//p15 "was"
+$('#textContainer').on('click', '.was15', ()=>{
+    if(!p16display){
+        $('#text').append("<div id='p16show' class='textDiv'>" + p16 + "</div>")
+    } 
+    $('.was15').addClass('clickedLink')
+    p16display = true
+})
+
+
+//p15 "wall"
+$('#textContainer').on('click', '.wall15', ()=>{
+    if(!p17display){
+        $('#text').append("<div id='p17show' class='textDiv'>" + p17 + "</div>")
+    } 
+    $('.wall15').addClass('clickedLink')
+    p17display = true
+})
+
+
+//p16 "delay"
+$('#textContainer').on('click', '.delay16', ()=>{
+    $('.delay16').addClass('clickedLink')
+})
+
+
+
+// this is the typewriter effect ---------------------
 let i = 0
 $(document).on('keypress',(e)=>{
     if(typeWriterActive){
@@ -252,7 +346,7 @@ $(document).on('keypress',(e)=>{
 
 
 //intercom change text to button 
-$("#textContainer").on('click','.intercom09',()=>{
+$("#textContainer").on('click','.intercom',()=>{
     if(!buttonEnable){
         $('#text').hide();
         let content =  $('#text').text()
@@ -264,7 +358,7 @@ $("#textContainer").on('click','.intercom09',()=>{
             if(word != "intercom"){
                 return "<button>"+ word +"</button>"
             } else {
-                return "<button class='intercom09 intercomButton'>" + word + "</button>"
+                return "<button class='intercom intercomButton'>" + word + "</button>"
             }  
         })
         let newHTML = newButtonArr.join("")
@@ -296,7 +390,7 @@ $('#textContainer').on('click','.chiTime',()=>{
 })
 
 //when delay function clicks ----- can have multiple delays and can be clicked multiple times 
-$(".delay").on('click',()=>{
+$('#textContainer').on('click',".delay",()=>{
     enableDelay ++
     // console.log("clicked", enableDelay)
     timeArray.push(displayedTime)
