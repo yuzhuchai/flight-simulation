@@ -110,6 +110,13 @@ let p18display = false
 let p19 = $('#p19').html()
 let p19display = false
 
+let p20 = $('#p20').html()
+let p20display = false
+
+let p22 = $('#p22').html()
+let p22display = false
+
+
 let p25 = $('#p25').html()
 let p25display = false
 
@@ -316,6 +323,9 @@ $('#textContainer').on('click', '.was15', ()=>{
         $('#text').append("<div id='p16show' class='textDiv'>" + p16 + "</div>")
     } 
     $('.was15').addClass('clickedLink')
+    if(p18display){
+        $('.travel2miles16').addClass('clickedLink')
+    }
     p16display = true
 })
 
@@ -326,6 +336,9 @@ $('#textContainer').on('click', '.wall15', ()=>{
         $('#text').append("<div id='p17show' class='textDiv'>" + p17 + "</div>")
     } 
     $('.wall15').addClass('clickedLink')
+    if(p18display){
+        $('.heatoff17').addClass('clickedLink')
+    }
     p17display = true
 })
 
@@ -365,6 +378,26 @@ $('#textContainer').on('click', '.next18', ()=>{
     $('.next18').remove()
     p19display = true
 })
+
+//p19 "impatient"
+$('#textContainer').on('click', '.impatient19', ()=>{
+    if(!p20display){
+        $('#text').append("<div id='p20show' class='textDiv'>" + p20 + "</div>")
+    } 
+    $('.impatient19').addClass('clickedLink')
+    p20display = true
+})
+
+
+//p20 "next"
+$('#textContainer').on('click', '.next20', ()=>{
+    if(!p22display){
+        $('#text').append("<div id='p22show' class='textDiv'>" + p22 + "</div>")
+    } 
+    $('.next20').remove()
+    p22display = true
+})
+
 
 
 // this is the typewriter effect ---------------------
