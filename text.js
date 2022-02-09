@@ -392,6 +392,13 @@ $('#textContainer').on('click','.chiTime',()=>{
     timeArray.push(displayedTime)
 })
 
+//change time when Connectict is clicked 
+$('#textContainer').on('click','.connecticutTime',()=>{
+    zone = "America/New_York"
+    timeArray.push(displayedTime)
+    $('.connecticutTime').addClass('clickedLink')
+})
+
 //when delay function clicks ----- can have multiple delays and can be clicked multiple times 
 $('#textContainer').on('click',".delay",()=>{
     enableDelay ++
