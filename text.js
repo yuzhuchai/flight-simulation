@@ -10,6 +10,7 @@ let minute
 let second
 let enableDelay = 0
 let delayAnHour = 0
+let loseMinut = 0
 let typeWriterActive = false 
 let loseHour = 0
 let gainHour = 0
@@ -41,6 +42,7 @@ function updateTimeZone(){
     //delay time every 10 seconds when delay is clicked
     d = new Date(timeString)
     d.setSeconds(d.getSeconds() - 10*enableDelay)
+    d.setMinutes(d.getMinutes() - loseMinut)
     d.setHours(d.getHours() - delayAnHour - loseHour + gainHour)
     // console.log(d)
     displayedTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
@@ -396,6 +398,13 @@ $('#textContainer').on('click',".delay",()=>{
     timeArray.push(displayedTime)
 })
 
+//delayanhour and 15mins
+$('#textContainer').on('click',".hour15min16",()=>{
+    loseMinut += 15
+    loseHour ++
+    // console.log("clicked", enableDelay)
+    timeArray.push(displayedTime)
+})
 
 //when loseHour function clicks ----- can have multiple delays and can be clicked multiple times 
 $("#textContainer").on('click',".loseHour",()=>{
