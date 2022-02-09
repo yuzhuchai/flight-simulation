@@ -65,14 +65,14 @@ $('#touch').on('click',()=>{
 // toggle fullscreen when choing the in flight map, need more fucntion to display the inflight map
 $('#map').on('click',()=>{
     console.log('clicked')
-    if (document.fullscreenElement) {
+    //if (document.fullscreenElement) {
         if (document.exitFullscreen) {
             document.exitFullscreen();
             $('#timeLineMap').show();
             $('#welcomePage').hide();
             $('#inflightEntertainment').hide();
         }
-    } 
+    //} 
     updateTimeMap();
 })
 

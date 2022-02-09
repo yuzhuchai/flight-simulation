@@ -11,3 +11,6 @@ function updateTimeMap(){
 
 
 // console.log(displayMap.join(""))
+
+
+// https://stackoverflow.com/questions/22004831/how-to-open-browsers-javascript-console-programmatically
