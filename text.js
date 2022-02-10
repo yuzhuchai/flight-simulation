@@ -160,9 +160,27 @@ let p20display = false
 let p22 = $('#p22').html()
 let p22display = false
 
+let p23 = $('#p23').html()
+let p23display = false
+
+
+let p24 = $('#p24').html()
+let p24display = false
 
 let p25 = $('#p25').html()
 let p25display = false
+
+
+let p26 = $('#p26').html()
+let p26display = false
+
+let p27 = $('#p27').html()
+let p27display = false
+
+
+let p28 = $('#p28').html()
+let p28display = false
+
 
 //P01 "delayed" 
 $('#textContainer').on('click','#delay01',()=>{
@@ -442,6 +460,70 @@ $('#textContainer').on('click', '.next20', ()=>{
     p22display = true
 })
 
+
+//p22 "i missed you"
+$('#textContainer').on('click', '.missed22', ()=>{
+    if(!p23display){
+        $('#text').append("<div id='p23show' class='textDiv'>" + p23 + "</div>")
+    } 
+    $('.missed22').addClass('clickedLink')
+    p23display = true
+})
+
+//p23 "Peak"
+$('#textContainer').on('click', '.peak23', ()=>{
+    if(!p24display){
+        $('#text').append("<div id='p24show' class='textDiv'>" + p24 + "</div>")
+    } 
+    $('.peak23').addClass('clickedLink')
+    p24display = true
+})
+
+
+//p24 'plateau'
+$('#textContainer').on('click', '.plateau24', ()=>{
+    if(!p25display){
+        $('#text').append("<div id='p25show' class='textDiv'>" + p25 + "</div>")
+        $('.noLink').removeClass('noLink')
+        $('.gainHour08').addClass('clickedLink')
+
+        p25display = true
+    } else {
+        $('#text').append("<div id='p26show' class='textDiv'>" + p26 + "</div>")
+        p26display = true
+    }
+    $('.plateau24').addClass('clickedLink')
+})
+
+
+//p25 'love'
+$('#textContainer').on('click', '.love25', ()=>{
+    if(!p26display){
+        $('#text').append("<div id='p26show' class='textDiv'>" + p26 + "</div>")
+    } 
+    p26display = true
+    $('.love25').addClass('clickedLink')
+})
+
+
+//p26 "burnt"
+$('#textContainer').on('click', '.burned26', ()=>{
+    if(!p27display){
+        $('#text').append("<div id='p27show' class='textDiv'>" + p27 + "</div>")
+    } 
+    p27display = true
+    $('.burned26').addClass('clickedLink')
+})
+
+
+//p27 "next"
+$('#textContainer').on('click', '.next27', ()=>{
+    if(!p28display){
+        $('#text').append("<div id='p28show' class='textDiv'>" + p28 + "</div>")
+    } 
+    p28display = true
+    $('.next27').remove()
+})
 
 
 // this is the typewriter effect ---------------------

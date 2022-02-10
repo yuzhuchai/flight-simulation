@@ -27,6 +27,11 @@ span{
     text-decoration-color: #0000EE;
 }
 
+.noLink{
+    text-decoration: none;   
+    color: black;
+}
+
 .hiddenText{
     display: none;
 }
