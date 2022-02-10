@@ -18,13 +18,39 @@ let gainHour = 0
 let col = 255
 let buttonEnable = false 
 let timeArray = []
+let dateChange = "none"
+let secondsDiff = 0
+let mintuesDiff = 0
+let hoursDiff = 0
 
 
 function updateTimeZone(){
-    // "America/New_York"
-    // "America/Chicago"
-    // "local"
-    let date = new Date();
+
+    // let date
+    // let month = new Date().getMonth()
+    // if(month < 10){
+    //     month = "0" + month.toString()
+    // }
+    // let day = new Date().getDay()
+    // if(day < 10){
+    //     day = "0" + day.toString()
+    // }
+    // let currentDate = new Date().getFullYear() + "-" + month + "-" + day + "T"
+    // if(dateChange == 'none'){
+    //     date = new Date();
+    // } else if (dateChange == 'ny11pm'){
+    //     //new Date("2016-05-24T23:00:00").toLocaleString("en-US",{timeZone:"America/New_York", hour12:false})
+    //     date = new Date(currentDate+"23:00:00")
+    //     enableDelay = 0
+    //     delayAnHour = 0
+    //     hour15minH = 0
+    //     hour15minM = 0
+    //     loseHour = 0
+    //     gainHour = 0
+    //     //  console.log(date + ' this is the date when change to NY 11pm')
+    // }
+    let date = new Date()
+    // console.log(currentDate)
     let timeString
     if(zone == "local"){
         timeString =  date.toLocaleString("en-US", {hour12: false})
@@ -39,12 +65,30 @@ function updateTimeZone(){
         if(changeTime[0] == "24"){
             timeString = timeString.split(' ')[0] + " 00:" + changeTime[1] +":"+ changeTime[2]
         }
+
     }
     //delay time every 10 seconds when delay is clicked
     d = new Date(timeString)
-    d.setSeconds(d.getSeconds() - 10*enableDelay)
-    d.setMinutes(d.getMinutes() - hour15minM)
-    d.setHours(d.getHours() - delayAnHour - loseHour + gainHour - hour15minH)
+    //s console.log(d + ' this is the date when d')
+    d.setSeconds(d.getSeconds() - 10*enableDelay - secondsDiff)
+    d.setMinutes(d.getMinutes() - hour15minM - mintuesDiff)
+    d.setHours(d.getHours() - delayAnHour - loseHour + gainHour - hour15minH - hoursDiff)
+
+    if(dateChange == 'ny11pm'){
+        secondsDiff = d.getSeconds() - 0
+        mintuesDiff = d.getMinutes() - 0
+        hoursDiff = d.getHours()-23
+        enableDelay = 0
+        hour15minH = 0
+        hour15minM = 0
+        delayAnHour = 0
+        loseHour = 0
+        gainHour = 0
+        d.setSeconds(0)
+        d.setMinutes(0)
+        d.setHours(23)
+        dateChange = 'none'
+    }
     // console.log(d)
     displayedTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
     timeDisplay.text(displayedTime)
@@ -467,6 +511,14 @@ $('#textContainer').on('click','.connecticutTime',()=>{
     zone = "America/New_York"
     timeArray.push(displayedTime)
     $('.connecticutTime').addClass('clickedLink')
+})
+
+//change Time to 11PM NY time when Clicked 
+$('#textContainer').on('click','.11pmNYTime',()=>{
+    zone = "America/New_York"
+    dateChange = "ny11pm"
+    timeArray.push(displayedTime)
+    $('.11pmNYTime').addClass('clickedLink')
 })
 
 //when delay function clicks ----- can have multiple delays and can be clicked multiple times 
