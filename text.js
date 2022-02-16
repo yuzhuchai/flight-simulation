@@ -519,6 +519,9 @@ $('#textContainer').on('click', '.burned26', ()=>{
     if(!p27display){
         $('#text').append("<div id='p27show' class='textDiv'>" + p27 + "</div>")
     } 
+    if(p29display){
+        $('.flying27').addClass('clickedLink')
+    }
     p27display = true
     $('.burned26').addClass('clickedLink')
 })
@@ -529,6 +532,9 @@ $('#textContainer').on('click', '.next27', ()=>{
     if(!p28display){
         $('#text').append("<div id='p28show' class='textDiv'>" + p28 + "</div>")
     } 
+    if(p29display){
+        $('.book28').addClass('clickedLink')
+    }
     p28display = true
     $('.next27').remove()
 })
@@ -539,10 +545,9 @@ $('#textContainer').on('click', '.next27', ()=>{
 $('#textContainer').on('click', '.flying27', ()=>{
     if(!p29display){
         $('#text').append("<div id='p29show' class='textDiv'>" + p29 + "</div>")
+        $('.flying27').addClass('clickedLink')
     } 
     p29display = true
-    $('.flying27').addClass('clickedLink')
-    $('.book28').addClass('clickedLink')
 })
 
 
@@ -550,10 +555,10 @@ $('#textContainer').on('click', '.flying27', ()=>{
 $('#textContainer').on('click', '.book28', ()=>{
     if(!p29display){
         $('#text').append("<div id='p29show' class='textDiv'>" + p29 + "</div>")
+        $('.flying27').addClass('clickedLink')
+        $('.book28').addClass('clickedLink')
     } 
     p29display = true
-    $('.flying27').addClass('clickedLink')
-    $('.book28').addClass('clickedLink')
 })
 
 
