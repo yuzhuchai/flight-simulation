@@ -327,7 +327,9 @@ $('#textContainer').on('click', '.chicago07', ()=>{
 //P08 "gain An Hour"
 $('#textContainer').on('click', '.gainHour08', ()=>{
     if(!p25display){
+        /////////////////////////////here
         $('#text').append("<div id='p25show' class='textDiv'>" + p25 + "</div>")
+        $('.noLink').removeClass('noLink')
     }
     $('.gainHour08').addClass('clickedLink')
     p25display = true
@@ -521,6 +523,9 @@ $('#textContainer').on('click', '.plateau24', ()=>{
 
 //p25 'love'
 $('#textContainer').on('click', '.love25', ()=>{
+    // check if 25 have noLink as class
+    let classNames =  $('.love25').attr('class')
+    console.log(classNames)
     if(!p26display){
         $('#text').append("<div id='p26show' class='textDiv'>" + p26 + "</div>")
     } 
