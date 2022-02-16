@@ -87,8 +87,11 @@ function updateTimeZone(){
         d.setHours(24)
     }
     dateChange = 'none'
+    
+    //bug: - if both time difference is calculated then you have to calculate the difference between the time ??? no that is not it. the second it is clicked produce correct result, but not after 
+    console.log(dateChange + secondsDiff11 + " seconds diff 11 " + mintuesDiff11 + " minutes diff 11 " + hoursDiff11 + " hours diff 11 " + secondsDiff12 + " seconds diff 12 " + mintuesDiff12 + " minutes diff 12 " + hoursDiff12 + " hours diff 12 " )
+    
 
-    //bug: - if both time difference is calculated then you have to calculate the difference between the time ??? no that is not it 
 
     // console.log(d)
     displayedTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
@@ -181,6 +184,10 @@ let p27display = false
 
 let p28 = $('#p28').html()
 let p28display = false
+
+let p29 = $('#p29').html()
+let p29display = false
+
 
 
 //P01 "delayed" 
@@ -524,6 +531,29 @@ $('#textContainer').on('click', '.next27', ()=>{
     } 
     p28display = true
     $('.next27').remove()
+})
+
+
+
+//p27 "flying"
+$('#textContainer').on('click', '.flying27', ()=>{
+    if(!p29display){
+        $('#text').append("<div id='p29show' class='textDiv'>" + p29 + "</div>")
+    } 
+    p29display = true
+    $('.flying27').addClass('clickedLink')
+    $('.book28').addClass('clickedLink')
+})
+
+
+//p28 "book"
+$('#textContainer').on('click', '.book28', ()=>{
+    if(!p29display){
+        $('#text').append("<div id='p29show' class='textDiv'>" + p29 + "</div>")
+    } 
+    p29display = true
+    $('.flying27').addClass('clickedLink')
+    $('.book28').addClass('clickedLink')
 })
 
 
