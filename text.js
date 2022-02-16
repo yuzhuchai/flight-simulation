@@ -188,6 +188,21 @@ let p28display = false
 let p29 = $('#p29').html()
 let p29display = false
 
+let p30 = $('#p30').html()
+let p30display = false
+
+let p31 = $('#p31').html()
+let p31display = false
+
+let p32 = $('#p32').html()
+let p32display = false
+
+
+let p33 = $('#p33').html()
+let p33display = false
+
+let p34 = $('#p34').html()
+let p34display = false
 
 
 //P01 "delayed" 
@@ -546,6 +561,7 @@ $('#textContainer').on('click', '.flying27', ()=>{
     if(!p29display){
         $('#text').append("<div id='p29show' class='textDiv'>" + p29 + "</div>")
         $('.flying27').addClass('clickedLink')
+        $('.book28').addClass('clickedLink')
     } 
     p29display = true
 })
@@ -560,6 +576,77 @@ $('#textContainer').on('click', '.book28', ()=>{
     } 
     p29display = true
 })
+
+
+//p29 "sinking"
+$('#textContainer').on('click', '.sinking29', ()=>{
+    if(!p31display){
+        $('#text').append("<div id='p31show' class='textDiv'>" + p31 + "</div>")
+        $('.sinking29').addClass('clickedLink')
+    } 
+    if(p32display){
+        $('.moment31').addClass('clickedLink')
+    }
+    p31display = true
+})
+
+
+//p30 'next'
+$('#textContainer').on('click', '.next30', ()=>{
+    if(!p32display){
+        $('#text').append("<div id='p32show' class='textDiv'>" + p32 + "</div>")
+    } 
+    p32display = true
+    $('.next30').remove()
+    $('.moment31').addClass('clickedLink')
+})
+
+
+
+//p31 "ordered"
+$('#textContainer').on('click', '.ordered31', ()=>{
+    if(!p30display){
+        $('#text').append("<div id='p30show' class='textDiv'>" + p30 + "</div>")
+    } 
+    if(p32display){
+        $('.next30').remove()
+    }
+    p30display = true
+    $('.ordered31').addClass("clickedLink")
+})
+
+
+//p31 "moment"
+$('#textContainer').on('click', '.moment31', ()=>{
+    if(!p32display){
+        $('#text').append("<div id='p32show' class='textDiv'>" + p32 + "</div>")
+    } 
+    p32display = true
+    $('.next30').remove()
+    $('.moment31').addClass("clickedLink")
+})
+
+
+//p32 "moment"
+$('#textContainer').on('click', '.moment32', ()=>{
+    if(!p33display){
+        $('#text').append("<div id='p33show' class='textDiv'>" + p33 + "</div>")
+    } 
+    p33display = true
+    $('.moment32').addClass("clickedLink")
+})
+
+//p33 'stop'
+$('#textContainer').on('click', '.stop33', ()=>{
+    if(!p34display){
+        $('#text').append("<div id='p34show' class='textDiv'>" + p34 + "</div>")
+    } 
+    p34display = true
+    $('.stop33').addClass("clickedLink")
+})
+
+
+
 
 
 // this is the typewriter effect ---------------------
