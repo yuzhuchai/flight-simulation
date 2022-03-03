@@ -61,6 +61,7 @@ $('#touch').on('click',()=>{
         $('#inflightEntertainment').show();
         $('#timeLineMap').hide();
     } 
+    $("body").css("background-image","none")
 })
 // toggle fullscreen when choing the in flight map, need more fucntion to display the inflight map
 $('#map').on('click',()=>{
@@ -79,6 +80,8 @@ $('#exit').on('click',  ()=>{
     $('#welcomePage').show();
     $('#timeLineMap').hide();
     $('#inflightEntertainment').hide();
+    $("body").css("background-image","url(assets/bg01.jpg)")
+
 })
 
 //toggle entertainment page

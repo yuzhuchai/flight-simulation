@@ -1,12 +1,63 @@
 body {
     background-color: rgb(255,255,255);
+    background-image: url(assets/bg01.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#welcomePage{
+    margin-left: 150px;
+    position: absolute;
+    bottom: 200px;
+}
+
+#welcome{
+    font-size: 80px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    margin-bottom: 80px;
 }
 
 .h1-b{
     font-weight: 800;
-    color: black;
+    color: white;
     text-decoration: none;
 }
+
+
+#seatNum{
+    color:white;   
+    font-size: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 20px 20px 100px #0000EE;
+    margin: 0px;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+
+#entertainmentText{
+    color:white; 
+    font-size: 50px;  
+    margin: 0px;
+    margin-bottom:50px;
+}
+
+#touch{
+    width:189px;
+    height: 69px;
+    background: #0000EE;
+    color: white;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    margin: 0px;
+}
+
 
 #typedText {
     color: black;
