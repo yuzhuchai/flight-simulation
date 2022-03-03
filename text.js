@@ -690,12 +690,13 @@ $("#textContainer").on('click','.intercom',()=>{
         })
         let newHTML = newButtonArr.join("")
         // console.log(newHTML)
-        $('#buttonDiv').show();
-        $("#buttonDiv").replaceWith( "<div id=buttonDiv>"+newHTML+"</div>" )
+        $("#buttonDivBook").replaceWith( "<div id=buttonDivBook>"+ newHTML +"</div>" )
+        $('#buttonDivBook').show();
+        // console.log($("#buttonDiv"))
         buttonEnable = true;
     } else {
         // console.log(buttonEnable,"this is triggered")
-        $('#buttonDiv').hide()
+        $('#buttonDivBook').hide()
         $('#text').show();
         buttonEnable = false 
     }
