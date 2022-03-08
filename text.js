@@ -214,6 +214,7 @@ $('#textContainer').on('click','#delay01',()=>{
     }
     p02display = true;
     $('.read04').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //P01 "an hour" 
@@ -227,6 +228,7 @@ $('#textContainer').on("click", "#delayAnHour", ()=>{
     $("#delay01").addClass('clickedLink')
     $('.read04').addClass('clickedLink')
     timeArray.push(displayedTime)
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -238,6 +240,7 @@ $("#theCity01").on('click',()=>{
     }
     p04display = true;
     $('#theCity01').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
  
@@ -250,6 +253,7 @@ $('#textContainer').on('click', '.write02', ()=>{
     p03display = true;
     $(".write02").addClass('clickedLink')
     $('.read04').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p03 next 
@@ -266,6 +270,7 @@ $('#textContainer').on('click', '.next03',()=>{
         p05display = true;
     }
     $('.next03').remove()
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p04 next 
@@ -273,6 +278,7 @@ $('#textContainer').on('click', '.next04',()=>{
     $('#text').append("<div id='p05show' class='textDiv'>" + p05 + "</div>")
     p05display = true; 
     $('.next04').remove()
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -285,6 +291,7 @@ $('#textContainer').on('click', '.read04',()=>{
     $('.read04').addClass('clickedLink')
     $("#delayAnHour").addClass('clickedLink');
     $("#delay01").addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -300,6 +307,7 @@ $('#textContainer').on('click', '.journal05',()=>{
     } 
     $('.journal05').addClass('clickedLink')
     typeWriterActive = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -310,6 +318,7 @@ $('#text').on('click', '.seenIt07', ()=>{
         $('#text').append("<div id='p08show' class='textDiv'>" + p08 + "</div>")
     }
     $('.seenIt07').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p07 "chicago"
@@ -320,6 +329,7 @@ $('#textContainer').on('click', '.chicago07', ()=>{
     $('.chicago07').addClass('clickedLink')
     $('.loseHour08').addClass('clickedLink')
     p09display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -333,6 +343,7 @@ $('#textContainer').on('click', '.gainHour08', ()=>{
     }
     $('.gainHour08').addClass('clickedLink')
     p25display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -345,6 +356,7 @@ $('#textContainer').on('click', '.loseHour08', ()=>{
     $('.loseHour08').addClass('clickedLink')
     $('.chicago07').addClass('clickedLink')
     p09display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -356,6 +368,7 @@ $('#textContainer').on('click', '.waiting09', ()=>{
     } 
     $('.waiting09').addClass('clickedLink')
     p09display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -367,6 +380,7 @@ $('#textContainer').on('click', '.redPlanet10', ()=>{
     } 
     $('.redPlanet10').addClass('clickedLink')
     p13display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p10 "next"
@@ -374,6 +388,7 @@ $('#textContainer').on('click', '.next10',()=>{
     $('#text').append("<div id='p11show' class='textDiv'>" + p11 + "</div>")
     p11display = true; 
     $('.next10').remove()
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p11 "the captain"
@@ -383,6 +398,7 @@ $('#textContainer').on('click', '.captain11', ()=>{
     } 
     $('.captain11').addClass('clickedLink')
     p12display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -393,6 +409,7 @@ $('#textContainer').on('click', '.auth12', ()=>{
     } 
     $('.auth12').addClass('clickedLink')
     p14display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p14 "giggling"
@@ -402,6 +419,7 @@ $('#textContainer').on('click', '.giggle14', ()=>{
     } 
     $('.giggle14').addClass('clickedLink')
     p15display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p15 "was"
@@ -414,6 +432,7 @@ $('#textContainer').on('click', '.was15', ()=>{
         $('.travel2miles16').addClass('clickedLink')
     }
     p16display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -427,6 +446,7 @@ $('#textContainer').on('click', '.wall15', ()=>{
         $('.heatoff17').addClass('clickedLink')
     }
     p17display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -443,6 +463,7 @@ $('#textContainer').on('click', '.travel2miles16', ()=>{
     $('.travel2miles16').addClass('clickedLink')
     $('.heatoff17').addClass('clickedLink')
     p18display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -454,6 +475,7 @@ $('#textContainer').on('click', '.heatoff17', ()=>{
     $('.heatoff17').addClass('clickedLink')
     $('.travel2miles16').addClass('clickedLink')
     p18display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -464,6 +486,7 @@ $('#textContainer').on('click', '.next18', ()=>{
     } 
     $('.next18').remove()
     p19display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p19 "impatient"
@@ -473,6 +496,7 @@ $('#textContainer').on('click', '.impatient19', ()=>{
     } 
     $('.impatient19').addClass('clickedLink')
     p20display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -483,6 +507,7 @@ $('#textContainer').on('click', '.next20', ()=>{
     } 
     $('.next20').remove()
     p22display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -493,6 +518,7 @@ $('#textContainer').on('click', '.missed22', ()=>{
     } 
     $('.missed22').addClass('clickedLink')
     p23display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p23 "Peak"
@@ -502,6 +528,7 @@ $('#textContainer').on('click', '.peak23', ()=>{
     } 
     $('.peak23').addClass('clickedLink')
     p24display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -518,6 +545,7 @@ $('#textContainer').on('click', '.plateau24', ()=>{
         p26display = true
     }
     $('.plateau24').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -531,6 +559,7 @@ $('#textContainer').on('click', '.love25', ()=>{
     } 
     p26display = true
     $('.love25').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -544,6 +573,7 @@ $('#textContainer').on('click', '.burned26', ()=>{
     }
     p27display = true
     $('.burned26').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -557,6 +587,7 @@ $('#textContainer').on('click', '.next27', ()=>{
     }
     p28display = true
     $('.next27').remove()
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -569,6 +600,7 @@ $('#textContainer').on('click', '.flying27', ()=>{
         $('.book28').addClass('clickedLink')
     } 
     p29display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -580,6 +612,7 @@ $('#textContainer').on('click', '.book28', ()=>{
         $('.book28').addClass('clickedLink')
     } 
     p29display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -593,6 +626,7 @@ $('#textContainer').on('click', '.sinking29', ()=>{
         $('.moment31').addClass('clickedLink')
     }
     p31display = true
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -604,6 +638,7 @@ $('#textContainer').on('click', '.next30', ()=>{
     p32display = true
     $('.next30').remove()
     $('.moment31').addClass('clickedLink')
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -618,6 +653,7 @@ $('#textContainer').on('click', '.ordered31', ()=>{
     }
     p30display = true
     $('.ordered31').addClass("clickedLink")
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -629,6 +665,7 @@ $('#textContainer').on('click', '.moment31', ()=>{
     p32display = true
     $('.next30').remove()
     $('.moment31').addClass("clickedLink")
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -639,6 +676,7 @@ $('#textContainer').on('click', '.moment32', ()=>{
     } 
     p33display = true
     $('.moment32').addClass("clickedLink")
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 //p33 'stop'
@@ -648,6 +686,7 @@ $('#textContainer').on('click', '.stop33', ()=>{
     } 
     p34display = true
     $('.stop33').addClass("clickedLink")
+    $('#textContainer').scrollTop(document.getElementById('textContainer').scrollHeight)
 })
 
 
@@ -764,7 +803,7 @@ $("#textContainer").on('click',".loseHour",()=>{
     loseHour ++
     col -=10
     let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
-    $("body").css('background-color',color)
+    $("#textContainer").css('background-color',color)
     // console.log("clicked", enableDelay)
     timeArray.push(displayedTime)
 })
@@ -774,7 +813,7 @@ $("#textContainer").on('click','.gainHour',()=>{
     gainHour ++
     col +=10
     let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
-    $("body").css('background-color',color)
+    $("#textContainer").css('background-color',color) 
     // console.log("clicked", enableDelay)
     timeArray.push(displayedTime)
 })
