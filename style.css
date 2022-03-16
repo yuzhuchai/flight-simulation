@@ -6,9 +6,27 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-content: flex-end;
+    width:100vw;
+    height:100vh;
 }
+
+#welcomePage{
+    margin-left: 5vw;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#welcome{
+    font-size: 8vw;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    margin-bottom: 3vh;
+}
+
 
 .buttonStyle{
     display: inline-block;
@@ -21,6 +39,8 @@ body {
     position: relative;
     overflow: hidden;
     margin-right: 5vw;
+    max-width: 170px;
+    max-height: 170px;
 }
 
 .buttonStyle:hover{
@@ -50,18 +70,7 @@ body {
     display: block;
 }
 
-#welcomePage{
-    margin-left: 15vw;
-    margin-bottom: 10vh;
-}
 
-#welcome{
-    font-size: 80px;
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
-    margin-bottom: 80px;
-}
 
 .h1-b{
     font-weight: 800;
@@ -72,12 +81,12 @@ body {
 
 .seatNum{
     color:white;   
-    font-size: 150px;
+    font-size: 18vh;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 20px 20px 100px #0000EE;
     margin: 0px;
-    margin-top:50px;
-    margin-bottom: 50px;
+    margin-top:5vh;
+    margin-bottom: 5vh;
 }
 
 
@@ -86,21 +95,9 @@ body {
     color:white; 
     font-size: 50px;  
     margin: 0px;
-    margin-bottom:50px;
+    margin-bottom:3vh;
 }
 
-#touch{
-    /* width:189px;
-    height: 69px;
-    background: #0000EE;
-    color: white;
-    border: 2px solid #FFFFFF;
-    border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-    margin: 0px; */
-}
 
 
 #typedText {
@@ -158,8 +155,9 @@ span{
 #inflightEntertainment{
     display: none;
     height: 100vh;
+    width: 100vw;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -185,7 +183,7 @@ span{
 
 
 .seatNumBook{
-    font-size: 100px;
+    font-size: 6vw;
     align-self: flex-start;
 }
 
