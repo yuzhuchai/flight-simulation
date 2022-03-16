@@ -697,7 +697,7 @@ $('#textContainer').on('click', '.stop33', ()=>{
 let i = 0
 $(document).on('keypress',(e)=>{
     if(typeWriterActive){
-        let str = "they are spraying green goo on the wings of the plane, before they started spraying green goo on the wings of the plane. I’ve seen it before, in Chicago" 
+        let str = "they are spraying green goo on the wings of the plane, before they started spraying green goo on the wings of the plane. I've seen it before, in Chicago" 
         let strArr = str.split('')
         let typedText = str.substring(0,i)
         i++

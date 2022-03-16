@@ -5,6 +5,9 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .buttonStyle{
@@ -13,11 +16,11 @@ body {
     color: white;
     border: 3px solid #FFFFFF;
     border-radius: 15px;
-    width: 170px;
-    min-height: 170px;
+    width: 15vw;
+    height: 15vw;
     position: relative;
     overflow: hidden;
-    margin-right: 80px;
+    margin-right: 5vw;
 }
 
 .buttonStyle:hover{
@@ -48,9 +51,8 @@ body {
 }
 
 #welcomePage{
-    margin-left: 150px;
-    position: absolute;
-    bottom: 200px;
+    margin-left: 15vw;
+    margin-bottom: 10vh;
 }
 
 #welcome{
