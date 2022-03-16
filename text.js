@@ -802,7 +802,7 @@ $('#textContainer').on('click',".hour15min16",()=>{
 $("#textContainer").on('click',".loseHour",()=>{
     loseHour ++
     col -=10
-    let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
+    let color = "rgba("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
     $("#textContainer").css('background-color',color)
     // console.log("clicked", enableDelay)
     timeArray.push(displayedTime)
