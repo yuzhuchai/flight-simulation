@@ -18,7 +18,7 @@
             <div class="buttonStyle" ><img src="assets/movie.png"><p>MOVIE</p></div>
             <div class="buttonStyle" ><img src="assets/musical-note.png"><p>MUSIC</p></div>
             <div class="buttonStyle" id='touch'><img src="assets/open-book.png"><p>READ</p></div>
-            <div class="buttonStyle" ><img src="assets/airplane1.png"><p>LIVE MAP</p></div>
+            <div class="buttonStyle map"><img src="assets/airplane1.png"><p>LIVE MAP</p></div>
         </div>
 
     </div>
@@ -117,9 +117,9 @@
         </div>
 
         <div id="buttonContainerBook">
-            <div class="buttonStyle buttonBookPage" ><img src="assets/musical-note.png"><p>MOVIE</p></div>
+            <div class="buttonStyle buttonBookPage" ><img src="assets/musical-note.png"><p>MUSIC</p></div>
             <div class="buttonStyle buttonBookPage" ><img src="assets/back-arrow.png"><p>BACK</p></div>
-            <div class="buttonStyle buttonBookPage" ><img src="assets/airplane1.png"><p>LIVE MAP</p></div>
+            <div class="buttonStyle buttonBookPage map" ><img src="assets/airplane1.png"><p>LIVE MAP</p></div>
         </div>
 
 
@@ -130,15 +130,28 @@
  
 
     <div id='timeLineMap'>
-        <div id='timeMapDiv'></div>
-        <div>
-            <button id='exit'>exit</button>
-            <button id='entertainment'>entertainment</button>
+        
+        <div id="mapContainer">
+            <div id="mapHeader"></div>
+
+            <div id='timeMapDiv'>
+                <canvas id="canvas" ></canvas>
+            </div>
+
+
+
+
+            <div id="mapFooter">
+                <button id='exit'>exit</button>
+                <button id='entertainment'>entertainment</button>
+            </div>
         </div>
+
     </div>
 
     <script src='text.js'></script>
     <script src='time.js'></script>
+    <!-- <script src='map.js'></script> -->
     <script src='app.js'></script>
 </body>
     

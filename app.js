@@ -64,7 +64,7 @@ $('#touch').on('click',()=>{
     // $("body").css("background-image","none")
 })
 // toggle fullscreen when choing the in flight map, need more fucntion to display the inflight map
-$('#map').on('click',()=>{
+$('.map').on('click',()=>{
     console.log('clicked')
         if (document.exitFullscreen) {
             document.exitFullscreen();
