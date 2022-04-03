@@ -16,6 +16,7 @@ let typeWriterActive = false
 let loseHour = 0
 let gainHour = 0
 let col = 255
+let a = 0.5
 let buttonEnable = false 
 let timeArray = []
 let dateChange = "none"
@@ -802,8 +803,9 @@ $('#textContainer').on('click',".hour15min16",()=>{
 $("#textContainer").on('click',".loseHour",()=>{
     loseHour ++
     col -=10
-    let color = "rgba("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
-    $("#textContainer").css('background-color',color)
+    a +=0.1
+    let color = "rgba("+col.toString() +","+ col.toString()+ "," + col.toString()+ "," + a.toString() +  ")"
+    $("#bookContainer").css('background-color',color)
     // console.log("clicked", enableDelay)
     timeArray.push(displayedTime)
 })
@@ -812,8 +814,9 @@ $("#textContainer").on('click',".loseHour",()=>{
 $("#textContainer").on('click','.gainHour',()=>{
     gainHour ++
     col +=10
-    let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+")"
-    $("#textContainer").css('background-color',color) 
+    a -=0.1
+    let color = "rgb("+col.toString() +","+ col.toString()+ "," + col.toString()+ "," + a.toString() +  ")"
+    $("#bookContainer").css('background-color',color) 
     // console.log("clicked", enableDelay)
     timeArray.push(displayedTime)
 })

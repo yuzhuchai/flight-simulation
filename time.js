@@ -58,7 +58,7 @@ function updateTimeMap(){
 
 
         let x = Math.random()*step + step*i + 200;
-        let y = Math.random()*(height-100) + 100
+        let y = Math.random()*(height-200) + 100
 
 
     
