@@ -228,20 +228,18 @@ span{
 }
 
 
-#mapHeader{
-    width: 100%;
-    height: 9vh;
-    border: 1px solid black;
-}
+
 
 #timeMapDiv{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 70vh;
     width: 83vw;
+    /* border-bottom:2px solid #FFFFFF; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #mapFooter{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     height: 9vh;
     display: flex;
@@ -267,6 +265,41 @@ span{
     flex-direction: row;
     align-items: center ;
 }
+
+#timeInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 2;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.mapInfoNum{
+    text-decoration: none;
+    color: black;
+}
+
+
+#mapHeader{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    /* border-bottom:2px solid #FFFFFF; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
 
 /* #canvas{
     width:100%;

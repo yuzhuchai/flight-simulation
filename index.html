@@ -132,7 +132,13 @@
     <div id='timeLineMap'>
         
         <div id="mapContainer">
-            <div id="mapHeader"></div>
+            <div id="mapHeader">
+                <div>Altitude: <span class="mapInfoNum">12</span></div>
+                <div>Wind Speed: <span class="mapInfoNum">200</span></div>
+                <div>Ground Temperature: 20<span class="mapInfoNum"></span></div>
+                <div>Air Temperature: 20<span class="mapInfoNum"></span></div>
+
+            </div>
 
             <div id='timeMapDiv'>
                 <canvas id="canvas" ></canvas>
@@ -143,6 +149,17 @@
 
             <div id="mapFooter">
                 <div class="buttonStyle buttonMapPage" id="exit" ><img src="assets/back-arrow.png"><p>BACK</p></div>
+                <div id="timeInfo">
+                    <div>
+                        Time to Chiago<br/><span class="mapInfoNum">03:35:23</span>
+                    </div>
+                    <div>
+                        Time since NewYork<br/><span class="mapInfoNum">03:35:23</span>
+                    </div>
+                    <div>
+                        Local Time at Present Position<br/><span class="mapInfoNum">03:35:23</span>
+                    </div>
+                </div>
                 <div id="buttonRight">
                     <div class="buttonStyle buttonMapPage" id='entertainment'><img src="assets/open-book.png"><p>READ</p></div>
                     <div class="buttonStyle buttonMapPage" ><img src="assets/musical-note.png"><p>MUSIC</p></div>
