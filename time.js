@@ -58,24 +58,39 @@ function updateTimeMap(){
 
 
         let x = Math.random()*step + step*i + 200;
-        // let x = Math.random()*(width-100) + 100
-        let y = Math.random()*(height-80) + 80
-        console.log(i)
-        ctx.fillText(timeArray[i],x,y);
+        let y = Math.random()*(height-100) + 100
 
+
+    
+        if(i > 0){
+            let midX = (x + px) / 2 
+            let diffX = midX - px
+            let midY = (y + py) / 2
+            let diffY = midY - py 
+            console.log(px,py,midX, midY,x,y,diffX, diffY);   
+        }
+
+
+        ctx.fillStyle = 'black';
         if(i > 0 && i % 2){
-
             ctx.beginPath();
             ctx.moveTo(x,y);
-            ctx.quadraticCurveTo((x+px)/2 + 200, (y+py)/2 + 200, px,py)
+            ctx.quadraticCurveTo(((x+px)/2 + x)/2, (y+py)/2 + 200, px,py)
             ctx.stroke();
         } else if (i > 0 && (i % 2 == 0) ){
-
             ctx.beginPath();
             ctx.moveTo(x,y);
-            ctx.quadraticCurveTo((x+px)/2 - 200, (y+py)/2 - 200, px,py)
+            ctx.quadraticCurveTo(((x+px)/2 + x)/2, (y+py)/2 -200, px,py)
             ctx.stroke();
         }
+
+        let textWidth = ctx.measureText(timeArray[i]).width + 20;
+        ctx.fillStyle="black"
+        ctx.fillRect(x-textWidth/2, y-25,textWidth , 50);
+        ctx.fillStyle = "white";
+        ctx.fillText(timeArray[i],x,y);
+
+
         px = x;
         py = y;
     }

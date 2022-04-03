@@ -89,7 +89,7 @@ function updateTimeZone(){
     dateChange = 'none'
     
     //bug: - if both time difference is calculated then you have to calculate the difference between the time ??? no that is not it. the second it is clicked produce correct result, but not after 
-    console.log(dateChange + secondsDiff11 + " seconds diff 11 " + mintuesDiff11 + " minutes diff 11 " + hoursDiff11 + " hours diff 11 " + secondsDiff12 + " seconds diff 12 " + mintuesDiff12 + " minutes diff 12 " + hoursDiff12 + " hours diff 12 " )
+    // console.log(dateChange + secondsDiff11 + " seconds diff 11 " + mintuesDiff11 + " minutes diff 11 " + hoursDiff11 + " hours diff 11 " + secondsDiff12 + " seconds diff 12 " + mintuesDiff12 + " minutes diff 12 " + hoursDiff12 + " hours diff 12 " )
     
 
 
@@ -553,7 +553,7 @@ $('#textContainer').on('click', '.plateau24', ()=>{
 $('#textContainer').on('click', '.love25', ()=>{
     // check if 25 have noLink as class
     let classNames =  $('.love25').attr('class')
-    console.log(classNames)
+    // console.log(classNames)
     if(!p26display){
         $('#text').append("<div id='p26show' class='textDiv'>" + p26 + "</div>")
     } 
