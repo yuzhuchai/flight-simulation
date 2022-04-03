@@ -244,8 +244,29 @@ span{
     border: 1px solid black;
     width: 100%;
     height: 9vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+    justify-content: space-between;
 }
 
+.buttonMapPage{
+    font-size:10px;
+    width: 6vh;
+    height: 6vh;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.buttonMapPage > p {
+    font-size: 20px;
+}
+
+#buttonRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+}
 
 /* #canvas{
     width:100%;

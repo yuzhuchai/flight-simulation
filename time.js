@@ -110,3 +110,8 @@ function updateTimeMap(){
 // https://stackoverflow.com/questions/22004831/how-to-open-browsers-javascript-console-programmatically
 
 //displaying the time map like the twine map but with time? 
+
+
+
+//time Array bug -> when return to the main menu have to clear time array 
+//same with going to entertainment -> have to fix time array bug 
