@@ -101,8 +101,51 @@ function updateTimeMap(){
 
 
 
+function displayAltitude(){
+    let altitude = Math.floor(Math.random()*380000)
+    let windSpeed = Math.floor(Math.random()*124)
+    let groundTemp = Math.floor(Math.random()*15 + 60)
+    let airTemp = Math.floor(Math.random()*23 + 46)
+    let hour1 = Math.floor(Math.random()*12)
+    let hour2 = Math.floor(Math.random()*12)
+    let hour3 = Math.floor(Math.random()*12)
+    let min1 = Math.floor(Math.random()*60)
+    let min2 = Math.floor(Math.random()*60)
+    let min3 = Math.floor(Math.random()*60)
+    let second1 = Math.floor(Math.random()*60)
+    let second2 = Math.floor(Math.random()*60)
+    let second3 = Math.floor(Math.random()*60)
 
 
+
+
+    $('#altitude').text(altitude)
+    $('#windSpeed').text(windSpeed)
+    $('#goundTemp').text(groundTemp)
+    $('#airTemp').text(-airTemp)
+    $('#hourTo1').text(hour1)
+    $('#hourTo2').text(hour2)
+    $('#hourTo3').text(hour3)
+    $('#minTo1').text(min1)
+    $('#minTo2').text(min2)
+    $('#minTo3').text(min3)
+    $('#secondTo1').text(second1)
+    $('#secondTo2').text(second2)
+    $('#secondTo3').text(second3)
+
+
+    setTimeout(displayAltitude,2000)
+}
+
+
+// function display(){
+//     setInterval(displayAltitude, 1000)
+// }
+
+// display();
+// setTimeout()
+
+displayAltitude();
 
 // console.log(displayMap.join(""))
 

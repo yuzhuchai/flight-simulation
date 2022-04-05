@@ -133,10 +133,10 @@
         
         <div id="mapContainer">
             <div id="mapHeader">
-                <div>Altitude: <span class="mapInfoNum">12</span></div>
-                <div>Wind Speed: <span class="mapInfoNum">200</span></div>
-                <div>Ground Temperature: 20<span class="mapInfoNum"></span></div>
-                <div>Air Temperature: 20<span class="mapInfoNum"></span></div>
+                <div>Altitude: <span class="mapInfoNum" id="altitude"></span> ft.</div>
+                <div>Wind Speed: <span class="mapInfoNum" id="windSpeed"></span> mph</div>
+                <div>Ground Temperature: <span class="mapInfoNum" id="goundTemp"></span> °F</div>
+                <div>Air Temperature: <span class="mapInfoNum" id="airTemp"></span> °F</div>
 
             </div>
 
@@ -151,13 +151,13 @@
                 <div class="buttonStyle buttonMapPage" id="exit" ><img src="assets/back-arrow.png"><p>BACK</p></div>
                 <div id="timeInfo">
                     <div>
-                        Time to Chiago<br/><span class="mapInfoNum">03:35:23</span>
+                        Time to Chiago<br/><span id="hourTo1" class="mapInfoNum"></span>:<span id="minTo1" class="mapInfoNum"></span>:<span id="secondTo1" class="mapInfoNum" ></span>
                     </div>
                     <div>
-                        Time since NewYork<br/><span class="mapInfoNum">03:35:23</span>
+                        Time since NewYork<br/><span id="hourTo2" class="mapInfoNum"></span>:<span id="minTo2" class="mapInfoNum"></span>:<span id="secondTo2" class="mapInfoNum"></span>
                     </div>
                     <div>
-                        Local Time at Present Position<br/><span class="mapInfoNum">03:35:23</span>
+                        Local Time at Present Position<br/><span id="hourTo3" class="mapInfoNum"></span>:<span id="minTo3" class="mapInfoNum"></span>:<span id="secondTo3" class="mapInfoNum"></span>
                     </div>
                 </div>
                 <div id="buttonRight">
