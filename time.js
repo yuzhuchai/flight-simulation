@@ -48,6 +48,7 @@ ctx.lineCap = "round";
 
 
 function updateTimeMap(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     let displayMap = timeArray.map(time=>{
         // console.log(time)
         return "<div>"+ time + "</div>"
